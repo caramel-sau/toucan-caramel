@@ -116,6 +116,7 @@
             timeout-ms = <30>;
             key-positions = <15 16>;
             bindings = <&kp DEL>;
+            layers = <B_MAC B_WIN>;
         };
 
         combo_backspace {
@@ -125,7 +126,7 @@
         };
 
         // Symbol Keys
-        combo_munus {
+        combo_minus {
             timeout-ms = <30>;
             key-positions = <20 21>;
             bindings = <&kp MINUS>;
@@ -290,9 +291,9 @@
         pair {
             display-name = "PAIR";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans      &kp LBKT &kp RBKT &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &kp LPAR &kp RPAR &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &kp LBRC &kp RBRC &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans &kp LBKT &kp RBKT  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans &kp LPAR &kp RPAR &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans &kp LBRC &kp RBRC &trans  &trans  &trans
                 &trans  &mo 2  &mt LSHFT SPACE      &mt RSHFT RET  &mo 3  &trans
             >;
         };

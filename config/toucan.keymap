@@ -188,35 +188,35 @@
             layers = <3>;
         };
 
-        combo_plus {
+        combo_num_plus {
             timeout-ms = <30>;
             key-positions = <3 4>;
             bindings = <&kp PLUS>;
             layers = <3>;
         };
 
-        combo_minus {
+        combo_num_minus {
             timeout-ms = <30>;
             key-positions = <15 16>;
             bindings = <&kp MINUS>;
             layers = <3>;
         };
 
-        combo_asterisk {
+        combo_num_asterisk {
             timeout-ms = <30>;
             key-positions = <7 8>;
             bindings = <&kp STAR>;
             layers = <3>;
         };
 
-        combo_slash {
+        combo_num_slash {
             timeout-ms = <30>;
             key-positions = <19 20>;
             bindings = <&kp FSLH>;
             layers = <3>;
         };
 
-        combo_colon {
+        combo_num_colon {
             timeout-ms = <30>;
             key-positions = <20 21>;
             bindings = <&kp COLON>;

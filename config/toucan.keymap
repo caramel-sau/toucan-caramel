@@ -162,13 +162,13 @@
         };
 
         combo_lang2 {
-            timeout-ms = <30>;
+            timeout-ms = <50>;
             key-positions = <14 16>;
             bindings = <&kp LANG2>;
         };
 
         combo_lang1 {
-            timeout-ms = <30>;
+            timeout-ms = <50>;
             key-positions = <19 21>;
             bindings = <&kp LANG1>;
         };
@@ -227,7 +227,7 @@
         combo_win {
             timeout-ms = <30>;
             key-positions = <38 39>;
-            bindings = <&kp LGUI>;
+            bindings = <&kp LG(LS(S))>;
             layers = <B_WIN>;
         };
     };
@@ -254,17 +254,17 @@
                &kp LC(C) &kp Q  &kp W  &kp E  &kp R  &kp T        &kp Y  &kp U  &kp I  &kp O  &kp P  &trans  
 &kp LC(X) &kp A &kp S &hmr_l LALT D  &hmr_l LCTRL F  &kp G        &kp H  &hmr_r RCTRL J  &hmr_r RALT K  &kp L  &kp SEMI  &trans  
             &kp LC(V)  &lt 5 Z  &kp X  &kp C  &kp V  &kp B        &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &trans  
-                           &kp ESC  &mo 2  &mt LSHFT SPACE        &mt RSHFT RET  &mo 3  &trans
+                           &kp ESC  &mo 2  &mt LSHFT SPACE        &mt RSHFT RET  &mo 3  &kp RGUI
             >;
         };
 
         nav {
             display-name = "NAV";
             bindings = <
-&trans  &trans  &trans  &kp LC(PG_DN)  &kp LC(PG_UP)  &trans      &kp HOME  &kp PG_DN  &kp PG_UP  &kp END  &trans  &trans  
-          &sys_reset  &trans  &trans  &trans  &trans  &trans      &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans  
-         &bootloader  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  
-                              &trans  &mo 2  &mt LSHFT SPACE      &mt RSHFT RET  &mo 3  &trans
+&trans  &trans  &trans  &kp LC(PG_DN)  &kp LC(PG_UP)  &trans          &kp HOME  &kp PG_DN  &kp PG_UP  &kp END  &trans  &trans  
+&sys_reset  &kp LC(N1) &kp LC(N2) &kp LC(N3) &kp LC(N4) &kp LC(N5)    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans  
+         &bootloader  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans  
+                              &trans  &mo 2  &mt LSHFT SPACE          &mt RSHFT RET  &mo 3  &trans
             >;
         };
 

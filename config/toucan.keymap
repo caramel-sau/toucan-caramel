@@ -8,7 +8,6 @@
 #define NAV   2
 #define NUM   3
 #define ADJ   4
-#define PAIR  5
 
 /* 位置番号の配置: */
 /*  0  1  2  3  4  5    6  7  8  9 10 11 */
@@ -161,6 +160,18 @@
             layers = <B_MAC B_WIN>;
         };
 
+        combo_lbkt {
+            timeout-ms = <30>;
+            key-positions = <7 19>;
+            bindings = <&kp LBKT>;
+        };
+
+        combo_rbkt {
+            timeout-ms = <30>;
+            key-positions = <8 20>;
+            bindings = <&kp RBKT>;
+        };
+
         combo_lang2 {
             timeout-ms = <50>;
             key-positions = <14 16>;
@@ -223,6 +234,14 @@
             layers = <3>;
         };
 
+        // Mac Only
+        combo_mac {
+            timeout-ms = <30>;
+            key-positions = <38 39>;
+            bindings = <&kp LG(LS(N4))>;
+            layers = <B_MAC>;
+        };
+
         // Windows Only
         combo_win {
             timeout-ms = <30>;
@@ -243,8 +262,8 @@
             bindings = <
                         &kp LG(C)  &kp Q  &kp W  &kp E  &kp R  &kp T      &kp Y  &kp U  &kp I  &kp O  &kp P  &trans  
 &kp LG(X) &kp A &hmr_l2 LGUI S &hmr_l LALT D  &hmr_l LCTRL F   &kp G      &kp H  &hmr_r RCTRL J  &hmr_r RALT K  &hmr_r2 RGUI L  &kp SEMI  &trans  
-                      &kp LG(V)  &lt 5 Z  &kp X  &kp C  &kp V  &kp B      &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &trans  
-                                      &kp ESC  &mo 2 &mt LSHFT SPACE      &mt RSHFT RET  &mo 3  &trans
+                        &kp LG(V)  &kp Z  &kp X  &kp C  &kp V  &kp B      &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &trans  
+                                     &kp ESC  &mo 2 &mt LSHFT SPACE      &mt RSHFT RET  &mo 3  &trans
             >;
         };
 
@@ -253,7 +272,7 @@
             bindings = <
                &kp LC(C) &kp Q  &kp W  &kp E  &kp R  &kp T        &kp Y  &kp U  &kp I  &kp O  &kp P  &trans  
 &kp LC(X) &kp A &kp S &hmr_l LALT D  &hmr_l LCTRL F  &kp G        &kp H  &hmr_r RCTRL J  &hmr_r RALT K  &kp L  &kp SEMI  &trans  
-            &kp LC(V)  &lt 5 Z  &kp X  &kp C  &kp V  &kp B        &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &trans  
+              &kp LC(V)  &kp Z  &kp X  &kp C  &kp V  &kp B        &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &trans  
                            &kp ESC  &mo 2  &mt LSHFT SPACE        &mt RSHFT RET  &mo 3  &kp RGUI
             >;
         };
@@ -288,18 +307,10 @@
             >;
         };
 
-        pair {
-            display-name = "PAIR";
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans      &trans &kp LBKT &kp RBKT  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans &kp LPAR &kp RPAR &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans &kp LBRC &kp RBRC &trans  &trans  &trans
-                &trans  &mo 2  &mt LSHFT SPACE      &mt RSHFT RET  &mo 3  &trans
-            >;
-        };
-
         extra_1 { status = "reserved"; };
 
         extra_2 { status = "reserved"; };
+
+        extra_3 { status = "reserved"; };
     };
 };

@@ -222,10 +222,8 @@
             layers = <B_MAC>;
         };
     };
-};
 
-/ {
-    keymap {
+    default_keymap: keymap {
         compatible = "zmk,keymap";
 
         b_mac {

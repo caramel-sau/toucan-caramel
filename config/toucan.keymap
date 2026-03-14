@@ -80,7 +80,7 @@
             require-prior-idle-ms = <150>;
             hold-while-undecided;
         };
-    }
+    };
 
     conditional_layers {
         compatible = "zmk,conditional-layers";

@@ -26,60 +26,58 @@
   */
 
 / {
-    behaviors {
-        hmr_r: hmr_r {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HMR_R";
-            bindings = <&kp>, <&kp>;
+    hmr_r: hmr_r {
+        compatible = "zmk,behavior-hold-tap";
+        label = "HMR_R";
+        bindings = <&kp>, <&kp>;
 
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "balanced";
-            hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38>;
-            hold-trigger-on-release;
-            require-prior-idle-ms = <150>;
-        };
+        #binding-cells = <2>;
+        tapping-term-ms = <200>;
+        flavor = "balanced";
+        hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38>;
+        hold-trigger-on-release;
+        require-prior-idle-ms = <150>;
+    };
 
-        hmr_r2: hmr_r2 {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HMR_R2";
-            bindings = <&kp>, <&kp>;
+    hmr_r2: hmr_r2 {
+        compatible = "zmk,behavior-hold-tap";
+        label = "HMR_R2";
+        bindings = <&kp>, <&kp>;
 
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "balanced";
-            hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38>;
-            hold-trigger-on-release;
-            require-prior-idle-ms = <150>;
-            hold-while-undecided;
-        };
+        #binding-cells = <2>;
+        tapping-term-ms = <200>;
+        flavor = "balanced";
+        hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38>;
+        hold-trigger-on-release;
+        require-prior-idle-ms = <150>;
+        hold-while-undecided;
+    };
 
-        hmr_l: hmr_l {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HMR_L";
-            bindings = <&kp>, <&kp>;
+    hmr_l: hmr_l {
+        compatible = "zmk,behavior-hold-tap";
+        label = "HMR_L";
+        bindings = <&kp>, <&kp>;
 
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "balanced";
-            hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 39 40 41>;
-            hold-trigger-on-release;
-            require-prior-idle-ms = <150>;
-        };
+        #binding-cells = <2>;
+        tapping-term-ms = <200>;
+        flavor = "balanced";
+        hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 39 40 41>;
+        hold-trigger-on-release;
+        require-prior-idle-ms = <150>;
+    };
 
-        hmr_l2: hmr_l2 {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HMR_L2";
-            bindings = <&kp>, <&kp>;
+    hmr_l2: hmr_l2 {
+        compatible = "zmk,behavior-hold-tap";
+        label = "HMR_L2";
+        bindings = <&kp>, <&kp>;
 
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "balanced";
-            hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 39 40 41>;
-            hold-trigger-on-release;
-            require-prior-idle-ms = <150>;
-            hold-while-undecided;
-        };
+        #binding-cells = <2>;
+        tapping-term-ms = <200>;
+        flavor = "balanced";
+        hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 39 40 41>;
+        hold-trigger-on-release;
+        require-prior-idle-ms = <150>;
+        hold-while-undecided;
     };
 
     conditional_layers {
@@ -223,17 +221,18 @@
         };
     };
 
+    behaviors {
+    };
+
     keymap {
         compatible = "zmk,keymap";
-        #address-cells = <1>;
-        #size-cells = <1>;
 
         b_mac {
             display-name = "B_MAC";
             bindings = <
-                &kp LG(C)  &kp Q  &kp W  &kp E  &kp R  &kp T      &kp Y  &kp U  &kp I  &kp O  &kp P  &trans  
-           &kp LG(X) &kp A &hmr_l LALT S &kp D  &kp F  &kp G      &kp H  &kp J  &kp K  &hmr_r RALT L &kp SEMI &trans  
-                &kp LG(V)  &kp Z  &kp X  &kp C  &kp V  &kp B      &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &trans  
+                &kp LG(C)  &kp Q  &kp W  &kp E  &kp R  &kp T      &kp Y  &kp U  &kp I  &kp O  &kp P  &trans
+           &kp LG(X) &kp A &hmr_l LALT S &kp D  &kp F  &kp G      &kp H  &kp J  &kp K  &hmr_r RALT L &kp SEMI &trans
+                &kp LG(V)  &kp Z  &kp X  &kp C  &kp V  &kp B      &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &trans
                         &lt 5 ESC  &lt 2 DEL &mt LSHFT SPACE      &mt RCTRL RET  &lt 3 BSPC  &kp RGUI
             >;
         };
@@ -241,9 +240,9 @@
         b_win {
             display-name = "B_WIN";
             bindings = <
-               &kp LC(C) &kp Q  &kp W  &kp E  &kp R  &kp T        &kp Y  &kp U  &kp I  &kp O  &kp P  &trans  
-         &kp LC(X) &kp A &hmr_l LALT S &kp D  &kp F  &kp G        &kp H  &kp J  &kp K  &hmr_r RALT L  &kp SEMI  &trans  
-              &kp LC(V)  &kp Z  &kp X  &kp C  &kp V  &kp B        &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &trans  
+               &kp LC(C) &kp Q  &kp W  &kp E  &kp R  &kp T        &kp Y  &kp U  &kp I  &kp O  &kp P  &trans
+         &kp LC(X) &kp A &hmr_l LALT S &kp D  &kp F  &kp G        &kp H  &kp J  &kp K  &hmr_r RALT L  &kp SEMI  &trans
+              &kp LC(V)  &kp Z  &kp X  &kp C  &kp V  &kp B        &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &trans
                      &lt 5 ESC  &lt 2 DEL  &mt LSHFT SPACE        &mt RCTRL RET  &lt 3 BSPC  &kp RGUI
             >;
         };
@@ -251,9 +250,9 @@
         nav {
             display-name = "NAV";
             bindings = <
-&trans  &trans  &trans  &kp LC(PG_DN)  &kp LC(PG_UP)  &trans          &kp HOME  &kp PG_DN  &kp PG_UP  &kp END  &trans  &trans  
-&sys_reset  &kp LC(N1) &kp LC(N2) &kp LC(N3) &kp LC(N4) &kp LC(N5)    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans  
-         &bootloader  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans  
+&trans  &trans  &trans  &kp LC(PG_DN)  &kp LC(PG_UP)  &trans          &kp HOME  &kp PG_DN  &kp PG_UP  &kp END  &trans  &trans
+&sys_reset  &kp LC(N1) &kp LC(N2) &kp LC(N3) &kp LC(N4) &kp LC(N5)    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans
+         &bootloader  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
                          &kp ESC  &lt 2 DEL  &mt LSHFT SPACE          &mt RCTRL RET  &lt 3 BSPC  &kp RGUI
             >;
         };
@@ -261,9 +260,9 @@
         sym {
             display-name = "SYM";
             bindings = <
-&trans  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT     &kp CARET  &kp AMPS  &kp STAR  &kp LPAR  &kp RPAR  &trans  
-        &trans  &kp N1  &kp N2  &kp N3  &kp N4   &kp N5     &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &sys_reset  
-&trans  &kp GRAVE  &kp LBRC  &kp LBKT  &kp LPAR &kp SQT     &kp DQT &kp RPAR  &kp RBKT  &kp RBRC  &kp TILDE  &bootloader  
+&trans  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT     &kp CARET  &kp AMPS  &kp STAR  &kp LPAR  &kp RPAR  &trans
+        &trans  &kp N1  &kp N2  &kp N3  &kp N4   &kp N5     &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &sys_reset
+&trans  &kp GRAVE  &kp LBRC  &kp LBKT  &kp LPAR &kp SQT     &kp DQT &kp RPAR  &kp RBKT  &kp RBRC  &kp TILDE  &bootloader
                     &kp ESC  &lt 2 DEL  &mt LSHFT SPACE     &mt RCTRL RET  &lt 3 BSPC  &kp RGUI
             >;
         };
@@ -271,9 +270,9 @@
         adj {
             display-name = "ADJ";
             bindings = <
-                             &trans  &trans  &trans  &trans  &trans  &tog 1      &kp C_VOL_DN  &kp C_MUTE  &kp C_VOL_UP  &kp C_BRI_DN  &kp C_BRI_UP  &trans  
+                             &trans  &trans  &trans  &trans  &trans  &tog 1      &kp C_VOL_DN  &kp C_MUTE  &kp C_VOL_UP  &kp C_BRI_DN  &kp C_BRI_UP  &trans
                              &trans  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5      &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &trans
-&trans &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4      &bt BT_CLR  &studio_unlock  &trans  &trans  &trans  &trans  
+&trans &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4      &bt BT_CLR  &studio_unlock  &trans  &trans  &trans  &trans
                                         &kp ESC  &lt 2 DEL  &mt LSHFT SPACE      &mt RCTRL RET  &lt 3 BSPC  &kp RGUI
             >;
         };
@@ -287,5 +286,7 @@
                                                              &trans &trans &trans      &trans &trans &trans
             >;
         };
+
+        extra_1 { status = "reserved"; };
     };
 };

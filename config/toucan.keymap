@@ -223,8 +223,10 @@
         };
     };
 
-    default_keymap: keymap {
+    keymap {
         compatible = "zmk,keymap";
+        #address-cells = <1>;
+        #size-cells = <1>;
 
         b_mac {
             display-name = "B_MAC";

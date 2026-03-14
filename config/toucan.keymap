@@ -334,7 +334,7 @@
           &kp LC(V)  &kp LA(LC(Z))  &kp LA(LC(X))  &kp LA(LC(C))  &kp LA(LC(V))  &kp LA(LC(B))        &kp LA(LC(N))  &kp LA(LC(M))  &kp LA(LC(COMMA))  &kp LA(LC(DOT))  &kp LA(LC(FSLH))  &trans
                                                          &lt 8 ESC  &lt 2 DEL  &mt LSHFT SPACE        &mt RCTRL RET  &lt 3 BSPC  &lt 7 RGUI
             >;
-        }
+        };
 
         shtalt {
             display-name = "SHTALT";
@@ -344,6 +344,6 @@
           &trans  &kp LS(LA(Z))  &kp LS(LA(X))  &kp LS(LA(C))  &kp LS(LA(V))  &kp LS(LA(B))        &kp LS(LA(N))  &kp LS(LA(M))  &kp LS(LA(COMMA))  &kp LS(LA(DOT))  &kp LS(LA(FSLH))  &trans
                                                                      &trans  &trans  &trans        &trans  &trans  &trans
             >;
-        }
+        };
     };
 };

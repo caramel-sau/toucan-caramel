@@ -262,7 +262,7 @@
             bindings = <
 &trans  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT     &kp CARET  &kp AMPS  &kp STAR  &kp LPAR  &kp RPAR  &trans  
         &trans  &kp N1  &kp N2  &kp N3  &kp N4   &kp N5     &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &sys_reset  
-&trans  &kp GRAVE  &kp LBRC  &kp LBKT  &kp LPAR &kp SQT     &kp DQT &kp RPAR  &kp RBKT  &kp RBRC  &kp TILDA  &bootloader  
+&trans  &kp GRAVE  &kp LBRC  &kp LBKT  &kp LPAR &kp SQT     &kp DQT &kp RPAR  &kp RBKT  &kp RBRC  &kp TILDE  &bootloader  
                     &kp ESC  &lt 2 DEL  &mt LSHFT SPACE     &mt RCTRL RET  &lt 3 BSPC  &kp RGUI
             >;
         };

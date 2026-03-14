@@ -3,11 +3,16 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
-#define B_MAC 0
-#define B_WIN 1
-#define NAV   2
-#define NUM   3
-#define ADJ   4
+#define B_MAC  0
+#define B_WIN  1
+#define NAV    2
+#define SYM    3
+#define ADJ    4
+#define SHTGUI 5
+#define ALTGUI 6
+#define SHTCTR 7
+#define ALTCTR 8
+#define SHTALT 9
 
 /* 位置番号の配置: */
 /*  0  1  2  3  4  5    6  7  8  9 10 11 */
@@ -86,6 +91,14 @@
             if-layers = <2 3>;
             then-layer = <4>;
         };
+        tri_layer2 {
+            if-layers = <5 6>;
+            then-layer = <9>;
+        };
+        tri_layer3 {
+            if-layers = <7 8>;
+            then-layer = <9>;
+        };
     };
 
     combos {
@@ -104,38 +117,11 @@
             bindings = <&mkp MB2>;
         };
 
-        // Special Keys
-        combo_TAB {
-            timeout-ms = <30>;
-            key-positions = <14 15>;
-            bindings = <&kp TAB>;
-        };
-
-        combo_DEL {
-            timeout-ms = <30>;
-            key-positions = <15 16>;
-            bindings = <&kp DEL>;
-            layers = <B_MAC B_WIN>;
-        };
-
-        combo_backspace {
-            timeout-ms = <30>;
-            key-positions = <18 19>;
-            bindings = <&kp BSPC>;
-        };
-
         // Symbol Keys
         combo_minus {
             timeout-ms = <30>;
             key-positions = <20 21>;
             bindings = <&kp MINUS>;
-            layers = <B_MAC B_WIN>;
-        };
-
-        combo_quote {
-            timeout-ms = <30>;
-            key-positions = <32 33>;
-            bindings = <&kp SQT>;
             layers = <B_MAC B_WIN>;
         };
 
@@ -160,18 +146,6 @@
             layers = <B_MAC B_WIN>;
         };
 
-        combo_lbkt {
-            timeout-ms = <30>;
-            key-positions = <7 19>;
-            bindings = <&kp LBKT>;
-        };
-
-        combo_rbkt {
-            timeout-ms = <30>;
-            key-positions = <8 20>;
-            bindings = <&kp RBKT>;
-        };
-
         combo_lang2 {
             timeout-ms = <50>;
             key-positions = <14 16>;
@@ -184,20 +158,21 @@
             bindings = <&kp LANG1>;
         };
 
-        // Num layer
         combo_f11 {
             timeout-ms = <30>;
-            key-positions = <25 26>;
+            key-positions = <13 14>;
             bindings = <&kp F11>;
-            layers = <3>;
+            layers = <4>;
         };
 
         combo_f12 {
             timeout-ms = <30>;
-            key-positions = <27 28>;
+            key-positions = <15 16>;
             bindings = <&kp F12>;
-            layers = <3>;
+            layers = <4>;
         };
+
+        // arithmetic operators
 
         combo_num_plus {
             timeout-ms = <30>;
@@ -234,6 +209,12 @@
             layers = <3>;
         };
 
+        combo_TAB {
+            timeout-ms = <30>;
+            key-positions = <14 15>;
+            bindings = <&kp TAB>;
+        };
+
         // Mac Only
         combo_mac {
             timeout-ms = <30>;
@@ -260,10 +241,10 @@
         b_mac {
             display-name = "B_MAC";
             bindings = <
-                        &kp LG(C)  &kp Q  &kp W  &kp E  &kp R  &kp T      &kp Y  &kp U  &kp I  &kp O  &kp P  &trans  
-&kp LG(X) &kp A &hmr_l2 LGUI S &hmr_l LALT D  &hmr_l LCTRL F   &kp G      &kp H  &hmr_r RCTRL J  &hmr_r RALT K  &hmr_r2 RGUI L  &kp SEMI  &trans  
-                        &kp LG(V)  &kp Z  &kp X  &kp C  &kp V  &kp B      &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &trans  
-                                     &kp ESC  &mo 2 &mt LSHFT SPACE      &mt RSHFT RET  &mo 3  &kp GLOBE
+                &kp LG(C)  &kp Q  &kp W  &kp E  &kp R  &kp T      &kp Y  &kp U  &kp I  &kp O  &kp P  &trans  
+           &kp LG(X) &kp A &kp S &hmr_l LALT D  &kp F  &kp G      &kp H  &kp J  &hmr_r RALT K  &kp L &kp SEMI  &trans  
+                &kp LG(V)  &kp Z  &kp X  &kp C  &kp V  &kp B      &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &trans  
+                        &lt 6 ESC  &lt 2 DEL &mt LSHFT SPACE      &mt RCTRL RET  &lt 3 BSPC  &lt 5 RGUI
             >;
         };
 
@@ -271,9 +252,9 @@
             display-name = "B_WIN";
             bindings = <
                &kp LC(C) &kp Q  &kp W  &kp E  &kp R  &kp T        &kp Y  &kp U  &kp I  &kp O  &kp P  &trans  
-&kp LC(X) &kp A &kp S &hmr_l LALT D  &hmr_l LCTRL F  &kp G        &kp H  &hmr_r RCTRL J  &hmr_r RALT K  &kp L  &kp SEMI  &trans  
+         &kp LC(X) &kp A &kp S &hmr_l LALT D  &kp F  &kp G        &kp H  &kp J  &hmr_r RALT K  &kp L  &kp SEMI  &trans  
               &kp LC(V)  &kp Z  &kp X  &kp C  &kp V  &kp B        &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &trans  
-                           &kp ESC  &mo 2  &mt LSHFT SPACE        &mt RSHFT RET  &mo 3  &kp RGUI
+                     &lt 8 ESC  &lt 2 DEL  &mt LSHFT SPACE        &mt RCTRL RET  &lt 3 BSPC  &lt 7 RGUI
             >;
         };
 
@@ -283,34 +264,78 @@
 &trans  &trans  &trans  &kp LC(PG_DN)  &kp LC(PG_UP)  &trans          &kp HOME  &kp PG_DN  &kp PG_UP  &kp END  &trans  &trans  
 &sys_reset  &kp LC(N1) &kp LC(N2) &kp LC(N3) &kp LC(N4) &kp LC(N5)    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans  
          &bootloader  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans  
-                              &trans  &mo 2  &mt LSHFT SPACE          &mt RSHFT RET  &mo 3  &trans
+                         &kp ESC  &lt 2 DEL  &mt LSHFT SPACE          &mt RCTRL RET  &lt 3 BSPC  &kp RGUI
             >;
         };
 
-        num {
-            display-name = "NUM";
+        sym {
+            display-name = "SYM";
             bindings = <
 &trans  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT     &kp CARET  &kp AMPS  &kp STAR  &kp LPAR  &kp RPAR  &trans  
         &trans  &kp N1  &kp N2  &kp N3  &kp N4   &kp N5     &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &sys_reset  
-&trans  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5   &kp F6     &kp F7  &kp F8  &kp F9  &kp F10  &bootloader  
-                         &trans  &mo 2  &mt LSHFT SPACE     &mt RSHFT RET  &mo 3  &trans
+&trans  &kp GRAVE  &kp LBRC  &kp LBKT  &kp LPAR &kp SQT     &kp DQT &kp RPAR  &kp RBKT  &kp RBRC  &trans  &bootloader  
+                    &kp ESC  &lt 2 DEL  &mt LSHFT SPACE     &mt RCTRL RET  &lt 3 BSPC  &kp RGUI
             >;
         };
 
         adj {
             display-name = "ADJ";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &tog 1      &kp C_VOL_DN  &kp C_MUTE  &kp C_VOL_UP  &kp C_BRI_DN  &kp C_BRI_UP  &trans  
-&trans  &trans  &trans  &trans  &trans  &trans      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &trans  
-&trans  &trans  &trans  &trans  &trans  &trans      &bt BT_CLR  &studio_unlock  &trans  &trans  &trans  &trans  
-                &trans  &mo 2  &mt LSHFT SPACE      &mt RSHFT RET  &mo 3  &trans
+                             &trans  &trans  &trans  &trans  &trans  &tog 1      &kp C_VOL_DN  &kp C_MUTE  &kp C_VOL_UP  &kp C_BRI_DN  &kp C_BRI_UP  &trans  
+                             &trans  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5      &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &trans
+&trans &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4      &bt BT_CLR  &studio_unlock  &trans  &trans  &trans  &trans  
+                                        &kp ESC  &lt 2 DEL  &mt LSHFT SPACE      &mt RCTRL RET  &lt 3 BSPC  &kp RGUI
             >;
         };
 
-        extra_1 { status = "reserved"; };
+        shtgui {
+            display-name = "SHTGUI";
+            bindings = <
+            &kp LG(C)  &kp LS(LG(Q))  &kp LS(LG(W))  &kp LS(LG(E))  &kp LS(LG(R))  &kp LS(LG(T))      &kp LS(LG(Y))  &kp LS(LG(U))  &kp LS(LG(I))  &kp LS(LG(O))  &kp LS(LG(P))  &trans
+               &kp LG(X) &kp LS(LG(A)) &kp LS(LG(S)) &kp LS(LG(D))  &kp LS(LG(F))  &kp LS(LG(G))      &kp LS(LG(H))  &kp LS(LG(J))  &kp LS(LG(K))  &kp LS(LG(L)) &kp LS(LG(SEMI))  &trans
+            &kp LG(V)  &kp LS(LG(Z))  &kp LS(LG(X))  &kp LS(LG(C))  &kp LS(LG(V))  &kp LS(LG(B))      &kp LS(LG(N))  &kp LS(LG(M))  &kp LS(LG(COMMA))  &kp LS(LG(DOT))  &kp LS(LG(FSLH))  &trans
+                                                            &lt 6 ESC  &lt 2 DEL &mt LSHFT SPACE      &mt RCTRL RET  &lt 3 BSPC  &lt 5 RGUI
+            >;
+        };
 
-        extra_2 { status = "reserved"; };
+        altgui {
+            display-name = "ALTGUI";
+            bindings = <
+            &kp LG(C)  &kp LA(LG(Q))  &kp LA(LG(W))  &kp LA(LG(E))  &kp LA(LG(R))  &kp LA(LG(T))      &kp LA(LG(Y))  &kp LA(LG(U))  &kp LA(LG(I))  &kp LA(LG(O))  &kp LA(LG(P))  &trans
+               &kp LG(X) &kp LA(LG(A)) &kp LA(LG(S)) &kp LA(LG(D))  &kp LA(LG(F))  &kp LA(LG(G))      &kp LA(LG(H))  &kp LA(LG(J))  &kp LA(LG(K))  &kp LA(LG(L)) &kp LA(LG(SEMI))  &trans
+            &kp LG(V)  &kp LA(LG(Z))  &kp LA(LG(X))  &kp LA(LG(C))  &kp LA(LG(V))  &kp LA(LG(B))      &kp LA(LG(N))  &kp LA(LG(M))  &kp LA(LG(COMMA))  &kp LA(LG(DOT))  &kp LA(LG(FSLH))  &trans
+                                                            &lt 6 ESC  &lt 2 DEL &mt LSHFT SPACE      &mt RCTRL RET  &lt 3 BSPC  &lt 5 RGUI
+            >;
+        };
 
-        extra_3 { status = "reserved"; };
+        shtctr {
+            display-name = "SHTCTR";
+            bindings = <
+           &kp LC(C) &kp LS(LC(Q))  &kp LS(LC(W))  &kp LS(LC(E))  &kp LS(LC(R))  &kp LS(LC(T))        &kp LS(LC(Y))  &kp LS(LC(U))  &kp LS(LC(I))  &kp LS(LC(O))  &kp LS(LC(P))  &trans
+             &kp LC(X) &kp LS(LC(A)) &kp LS(LC(S)) &kp LS(LC(D))  &kp LS(LC(F))  &kp LS(LC(G))        &kp LS(LC(H))  &kp LS(LC(J))  &kp LS(LC(K))  &kp LS(LC(L))  &kp LS(LC(SEMI))  &trans
+          &kp LC(V)  &kp LS(LC(Z))  &kp LS(LC(X))  &kp LS(LC(C))  &kp LS(LC(V))  &kp LS(LC(B))        &kp LS(LC(N))  &kp LS(LC(M))  &kp LS(LC(COMMA))  &kp LS(LC(DOT))  &kp LS(LC(FSLH))  &trans
+                                                         &lt 8 ESC  &lt 2 DEL  &mt LSHFT SPACE        &mt RCTRL RET  &lt 3 BSPC  &lt 7 RGUI
+            >;
+        };
+
+        altctr {
+            display-name = "ALTCTR";
+            bindings = <
+           &kp LC(C) &kp LA(LC(Q))  &kp LA(LC(W))  &kp LA(LC(E))  &kp LA(LC(R))  &kp LA(LC(T))        &kp LA(LC(Y))  &kp LA(LC(U))  &kp LA(LC(I))  &kp LA(LC(O))  &kp LA(LC(P))  &trans
+             &kp LC(X) &kp LA(LC(A)) &kp LA(LC(S)) &kp LA(LC(D))  &kp LA(LC(F))  &kp LA(LC(G))        &kp LA(LC(H))  &kp LA(LC(J))  &kp LA(LC(K))  &kp LA(LC(L))  &kp LA(LC(SEMI))  &trans
+          &kp LC(V)  &kp LA(LC(Z))  &kp LA(LC(X))  &kp LA(LC(C))  &kp LA(LC(V))  &kp LA(LC(B))        &kp LA(LC(N))  &kp LA(LC(M))  &kp LA(LC(COMMA))  &kp LA(LC(DOT))  &kp LA(LC(FSLH))  &trans
+                                                         &lt 8 ESC  &lt 2 DEL  &mt LSHFT SPACE        &mt RCTRL RET  &lt 3 BSPC  &lt 7 RGUI
+            >;
+        }
+
+        shtalt {
+            display-name = "SHTALT";
+            bindings = <
+           &trans &kp LS(LA(Q))  &kp LS(LA(W))  &kp LS(LA(E))  &kp LS(LA(R))  &kp LS(LA(T))        &kp LS(LA(Y))  &kp LS(LA(U))  &kp LS(LA(I))  &kp LS(LA(O))  &kp LS(LA(P))  &trans
+             &trans &kp LS(LA(A)) &kp LS(LA(S)) &kp LS(LA(D))  &kp LS(LA(F))  &kp LS(LA(G))        &kp LS(LA(H))  &kp LS(LA(J))  &kp LS(LA(K))  &kp LS(LA(L))  &kp LS(LA(SEMI))  &trans
+          &trans  &kp LS(LA(Z))  &kp LS(LA(X))  &kp LS(LA(C))  &kp LS(LA(V))  &kp LS(LA(B))        &kp LS(LA(N))  &kp LS(LA(M))  &kp LS(LA(COMMA))  &kp LS(LA(DOT))  &kp LS(LA(FSLH))  &trans
+                                                                     &trans  &trans  &trans        &trans  &trans  &trans
+            >;
+        }
     };
 };

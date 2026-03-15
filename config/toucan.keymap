@@ -127,18 +127,6 @@
             layers = <B_MAC B_WIN>;
         };
 
-        combo_lang2 {
-            timeout-ms = <50>;
-            key-positions = <14 16>;
-            bindings = <&kp LANG2>;
-        };
-
-        combo_lang1 {
-            timeout-ms = <50>;
-            key-positions = <19 21>;
-            bindings = <&kp LANG1>;
-        };
-
         combo_f11 {
             timeout-ms = <30>;
             key-positions = <13 14>;
@@ -196,10 +184,22 @@
             bindings = <&kp TAB>;
         };
 
+        combo_DEL {
+            timeout-ms = <30>;
+            key-positions = <15 16>;
+            bindings = <&kp DEL>;
+        };
+
+        combo_BSPC {
+            timeout-ms = <30>;
+            key-positions = <19 20>;
+            bindings = <&kp BSPC>;
+        };
+
         // Mac Only
         combo_mac {
             timeout-ms = <30>;
-            key-positions = <38 39>;
+            key-positions = <3 4 5>;
             bindings = <&kp LG(LS(N4))>;
             layers = <B_MAC>;
         };
@@ -207,7 +207,7 @@
         // Windows Only
         combo_win {
             timeout-ms = <30>;
-            key-positions = <38 39>;
+            key-positions = <3 4 5>;
             bindings = <&kp LG(LS(S))>;
             layers = <B_WIN>;
         };
@@ -230,7 +230,7 @@
                 &kp LG(C)  &kp Q  &kp W  &kp E  &kp R  &kp T      &kp Y  &kp U  &kp I  &kp O  &kp P  &trans
            &kp LG(X) &kp A &hmr_l LALT S &kp D  &kp F  &kp G      &kp H  &kp J  &kp K  &hmr_r RALT L &kp SEMI &trans
                 &kp LG(V)  &kp Z  &kp X  &kp C  &kp V  &kp B      &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &trans
-                        &lt 5 ESC  &lt 2 DEL &mt LSHFT SPACE      &mt RCTRL RET  &lt 3 BSPC  &kp RGUI
+                      &lt 5 ESC  &lt 2 LANG2 &mt LSHFT SPACE      &mt RCTRL RET  &lt 3 LANG1  &kp RGUI
             >;
         };
 
@@ -240,7 +240,7 @@
                &kp LC(C) &kp Q  &kp W  &kp E  &kp R  &kp T        &kp Y  &kp U  &kp I  &kp O  &kp P  &trans
          &kp LC(X) &kp A &hmr_l LALT S &kp D  &kp F  &kp G        &kp H  &kp J  &kp K  &hmr_r RALT L  &kp SEMI  &trans
               &kp LC(V)  &kp Z  &kp X  &kp C  &kp V  &kp B        &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &trans
-                     &lt 5 ESC  &lt 2 DEL  &mt LSHFT SPACE        &mt RCTRL RET  &lt 3 BSPC  &kp RGUI
+                    &lt 5 ESC  &lt 2 LANG2 &mt LSHFT SPACE        &mt RCTRL RET  &lt 3 LANG1  &kp RGUI
             >;
         };
 
@@ -250,7 +250,7 @@
 &trans  &trans  &trans  &kp LC(PG_DN)  &kp LC(PG_UP)  &trans          &kp HOME  &kp PG_DN  &kp PG_UP  &kp END  &trans  &trans
 &sys_reset  &kp LC(N1) &kp LC(N2) &kp LC(N3) &kp LC(N4) &kp LC(N5)    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans
          &bootloader  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
-                         &kp ESC  &lt 2 DEL  &mt LSHFT SPACE          &mt RCTRL RET  &lt 3 BSPC  &kp RGUI
+                      &lt 5 ESC  &lt 2 LANG2 &mt LSHFT SPACE          &mt RCTRL RET  &lt 3 LANG1  &kp RGUI
             >;
         };
 
@@ -260,7 +260,7 @@
 &trans  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT     &kp CARET  &kp AMPS  &kp STAR  &kp LPAR  &kp RPAR  &trans
         &trans  &kp N1  &kp N2  &kp N3  &kp N4   &kp N5     &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &sys_reset
 &trans  &kp GRAVE  &kp LBRC  &kp LBKT  &kp LPAR &kp SQT     &kp DQT &kp RPAR  &kp RBKT  &kp RBRC  &kp TILDE  &bootloader
-                    &kp ESC  &lt 2 DEL  &mt LSHFT SPACE     &mt RCTRL RET  &lt 3 BSPC  &kp RGUI
+                 &lt 5 ESC  &lt 2 LANG2 &mt LSHFT SPACE     &mt RCTRL RET  &lt 3 LANG1  &kp RGUI
             >;
         };
 
@@ -270,7 +270,7 @@
                              &trans  &trans  &trans  &trans  &trans  &tog 1      &kp C_VOL_DN  &kp C_MUTE  &kp C_VOL_UP  &kp C_BRI_DN  &kp C_BRI_UP  &trans
                              &trans  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5      &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &trans
 &trans &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4      &bt BT_CLR  &studio_unlock  &trans  &trans  &trans  &trans
-                                        &kp ESC  &lt 2 DEL  &mt LSHFT SPACE      &mt RCTRL RET  &lt 3 BSPC  &kp RGUI
+                                     &lt 5 ESC  &lt 2 LANG2 &mt LSHFT SPACE      &mt RCTRL RET  &lt 3 LANG1  &kp RGUI
             >;
         };
 

@@ -212,7 +212,7 @@
             layers = <B_WIN>;
         };
 
-        // Shift + Option + Command + \
+        // Shift + Option + Command + Backslash
         combo_sht_opt_cmd_bslash {
             timeout-ms = <30>;
             key-positions = <6 7 8>;
